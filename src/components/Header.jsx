@@ -1,8 +1,9 @@
 import React from 'react';
 import logo from '../assets/images/logo.svg';
+
 const Header = () => {
   return (
-    <header>
+    <header className="container">
       <div>
         <a href="/">
           <img src={logo} alt="Foto capa" />
