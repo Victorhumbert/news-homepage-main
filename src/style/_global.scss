@@ -1,12 +1,28 @@
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+}
+
 body{
   margin: 0;
-  display: grid;
-  justify-self: center;
-  align-items: center;
-  height: 100vh;
 }
 
 .container{
   max-width: 1440px;
   margin: 0 auto;
+  padding: 30px;
+}
+
+img{
+  max-width: 100%;
+  object-fit: cover;
+}
+
+p{
+  font-family: "Inter", sans-serif;
+  font-size: .9375rem;
+  color: hsl(236, 13%, 42%);
 }

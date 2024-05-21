@@ -1,15 +1,15 @@
 header{
   display: flex;
   justify-content: space-between;
+  padding: 40px;
+  align-items: center;
    nav ul {
     display: flex;
-    list-style: none;
     gap: 30px;
     li a {
-      text-decoration: none;
       color: hsl(236, 13%, 42%);
-      font-family: "Inter", sans-serif;
       transition: .3s;
+      padding: 5px;
 
       &:hover{
       color: hsl(5, 85%, 63%);
