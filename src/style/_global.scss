@@ -4,6 +4,7 @@
   list-style: none;
   text-decoration: none;
   font-family: "Inter", sans-serif;
+  box-sizing: border-box;
 }
 
 body{
@@ -25,4 +26,5 @@ p{
   font-family: "Inter", sans-serif;
   font-size: .9375rem;
   color: hsl(236, 13%, 42%);
+  line-height: 1.7;
 }
