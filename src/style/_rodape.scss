@@ -3,10 +3,22 @@
   ul{
     display: flex;
     gap: 30px;
-
+    @media (max-width:500px) {
+      display: grid;
+      width: 100%;
+    }
+    
     li{
       display: flex;
       gap: 10px;
+
+      div{
+        flex: 1;
+
+        & + div {
+          flex: 2;
+        }
+      }
       
       h1{
         color: hsl(233, 8%, 79%);

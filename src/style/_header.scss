@@ -17,4 +17,46 @@ header{
       }
     }
    }
+
+   // MOBILE
+  @media (max-width:720px) {
+    nav ul{
+      gap: 10px;
+    }
+
+    @media (max-width:500px) {
+      nav{
+        .menu{
+          display: grid;
+          cursor: pointer;
+        }
+
+        .fechar{
+          position: relative;
+          z-index: 99;
+        }
+      
+        ul{
+          display: grid;
+          position: fixed;
+          align-content: start;
+          gap: 30px;
+          width: 75vw;
+          height: 100vh;
+          padding: 20px;
+          padding-top: 25vh;
+          background: hsl(36, 100%, 100%);
+          top: 0%;
+          right: -100%;
+          font-size: 1.25rem;
+
+          &.ativo{
+           right: 0%;
+           box-shadow: 0 0 0 100vw hsla(240, 100%, 5%, .5);
+         }
+        }
+      }
+    }
+  }
 }
+

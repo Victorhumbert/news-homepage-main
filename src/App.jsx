@@ -1,8 +1,7 @@
-import React from 'react';
-import Header from './components/Header';
-import '../style.css';
-import MainNews from './components/MainNews';
-import RodapeNews from './components/Rodape';
+import React from "react";
+import Header from "./components/Header";
+import MainNews from "./components/MainNews";
+import RodapeNews from "./components/Rodape";
 
 const App = () => {
   return (
