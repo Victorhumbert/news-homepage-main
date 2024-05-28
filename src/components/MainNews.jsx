@@ -19,7 +19,7 @@ const MainNews = () => {
         </p>
         <a
           href="#"
-          className="bg-primaria text-branco lett hover:bg-azulEscuro self-end justify-self-start px-16 py-4 text-xl font-medium tracking-widest duration-300"
+          className="bg-primaria text-branco hover:bg-azulEscuro self-end justify-self-start px-16 py-4 text-xl font-medium tracking-widest duration-300"
         >
           READ MORE
         </a>
