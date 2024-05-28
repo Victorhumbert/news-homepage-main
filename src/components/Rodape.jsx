@@ -1,48 +1,52 @@
-import React from 'react';
-import pc from '../assets/images/image-retro-pcs.jpg';
-import laptop from '../assets/images/image-top-laptops.jpg';
-import gaming from '../assets/images/image-gaming-growth.jpg';
+import React from "react";
+import pc from "../assets/images/image-retro-pcs.jpg";
+import laptop from "../assets/images/image-top-laptops.jpg";
+import gaming from "../assets/images/image-gaming-growth.jpg";
+
+const artigos = [
+  {
+    title: "Reviving Retro PCs",
+    content: "What happens when old PCs are given modern upgrades",
+    id: "01",
+    img: pc,
+  },
+  {
+    title: "Top 10 Laptops of 2022",
+    content: "Our besy picks forvarious needs and budgets",
+    id: "02",
+    img: laptop,
+  },
+  {
+    title: "The Growth of Gaming",
+    content: "How the pandemic has sparked fresh opportunities",
+    id: "03",
+    img: gaming,
+  },
+];
 
 const RodapeNews = () => {
   return (
-    <article className="rodape container">
-      <ul>
-        <li>
-          <div>
-            <img src={pc} alt="PC retrô" />
-          </div>
-          <div>
-            <h1>01</h1>
-            <a href="#">
-              <h2>Reviving Retro PCs</h2>
-              <p>What happens when old PCs are given modern upgrades</p>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div>
-            <img src={laptop} alt="Laptop" />
-          </div>
-          <div>
-            <h1>02</h1>
-            <a href="#">
-              <h2>Top 10 Laptops of 2022</h2>
-              <p>Our besy picks forvarious needs and budgets</p>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div>
-            <img src={gaming} alt="Gaming" />
-          </div>
-          <div>
-            <h1>03</h1>
-            <a href="#">
-              <h2>The Growth of Gaming</h2>
-              <p>How the pandemic has sparked fresh opportunities</p>
-            </a>
-          </div>
-        </li>
+    <article className="container mt-16">
+      <ul className="flex gap-8 max-sm:mx-4 max-sm:grid max-sm:justify-start">
+        {artigos.map(({ title, content, id, img }) => (
+          <li key={id} className="flex gap-5">
+            <div>
+              <img src={img} alt={title} />
+            </div>
+            <div className="flex-1">
+              <h1 className="text-azulCinza mb-3 text-5xl font-semibold">
+                {id}
+              </h1>
+              <a
+                href={`#${title}`}
+                className="text-azulEscuro hover:text-primaria text-2xl duration-300 "
+              >
+                <h2 className="mb-4 font-semibold">{title}</h2>
+                <p className=" text-azulCinzaEscuro text-xl">{content}</p>
+              </a>
+            </div>
+          </li>
+        ))}
       </ul>
     </article>
   );
