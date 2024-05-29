@@ -44,7 +44,7 @@ const Header = () => {
           />
         </button>
         <ul
-          className={`flex gap-8 max-md:fixed max-md:-right-full max-md:top-0 max-md:grid max-md:h-screen max-md:w-3/4 max-md:content-start max-md:bg-white max-md:p-5 max-md:pt-16 max-md:text-xl ${!menuMobile ? "max-md:grid" : "max-md:right-0 "}`}
+          className={`flex gap-8 duration-300 max-md:fixed max-md:-right-full max-md:top-0 max-md:grid max-md:h-screen max-md:w-3/4 max-md:content-start max-md:bg-white max-md:p-5 max-md:pt-16 max-md:text-xl ${!menuMobile ? "max-md:grid" : "max-md:right-0 "}`}
         >
           {menuLinks.map(({ title }) => (
             <li key={title}>
