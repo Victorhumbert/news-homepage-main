@@ -19,17 +19,17 @@ const news = [
 
 const AsideNews = () => {
   return (
-    <aside className="bg-azulEscuro col-start-3 row-span-1 row-start-1 row-end-3 grid content-start items-start justify-self-start p-8 max-sm:col-start-1 max-sm:row-start-4 max-sm:row-end-5 max-sm:mx-4">
-      <h2 className=" text-secundaria text mb-4 text-5xl font-semibold">New</h2>
-      <ul className=" divide-azulCinzaEscuro grid gap-10 divide-y">
+    <aside className="col-start-3 row-span-1 row-start-1 row-end-3 grid content-start items-start justify-self-start bg-azulEscuro p-8 max-md:col-start-1 max-md:row-start-4 max-md:row-end-5 max-md:mx-4">
+      <h2 className=" text mb-4 text-5xl font-semibold text-secundaria">New</h2>
+      <ul className=" grid gap-10 divide-y divide-azulCinzaEscuro">
         {news.map(({ title, content }) => (
           <li key={title} className="pt-10">
             <a
-              className="text-branco hover:text-secundaria duration-300"
+              className="text-branco duration-300 hover:text-secundaria"
               href={`#${title}`}
             >
               <h3 className="mb-2 text-2xl font-semibold">{title}</h3>
-              <p className="text-azulCinza text-lg">{content}</p>
+              <p className="text-lg text-azulCinza">{content}</p>
             </a>
           </li>
         ))}

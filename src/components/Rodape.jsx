@@ -27,22 +27,22 @@ const artigos = [
 const RodapeNews = () => {
   return (
     <article className="container mt-16">
-      <ul className="flex gap-8 max-sm:mx-4 max-sm:grid max-sm:justify-start">
+      <ul className="flex gap-8 max-md:mx-4 max-md:grid max-md:justify-start">
         {artigos.map(({ title, content, id, img }) => (
           <li key={id} className="flex gap-5">
-            <div>
-              <img src={img} alt={title} />
+            <div className="flex">
+              <img src={img} alt={title} className=" object-cover" />
             </div>
             <div className="flex-1">
-              <h1 className="text-azulCinza mb-3 text-5xl font-semibold">
+              <h1 className="mb-3 text-5xl font-semibold text-azulCinza">
                 {id}
               </h1>
               <a
                 href={`#${title}`}
-                className="text-azulEscuro hover:text-primaria text-2xl duration-300 "
+                className="text-2xl text-azulEscuro duration-300 hover:text-primaria "
               >
                 <h2 className="mb-4 font-semibold">{title}</h2>
-                <p className=" text-azulCinzaEscuro text-xl">{content}</p>
+                <p className=" text-xl text-azulCinzaEscuro">{content}</p>
               </a>
             </div>
           </li>

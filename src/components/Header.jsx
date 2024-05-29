@@ -3,45 +3,30 @@ import logo from "../assets/images/logo.svg";
 import menuAbrir from "../assets/images/icon-menu.svg";
 import menuFechar from "../assets/images/icon-menu-close.svg";
 
+const menuLinks = [
+  {
+    title: "Home",
+  },
+  {
+    title: "New",
+  },
+  {
+    title: "Popular",
+  },
+  {
+    title: "Trending",
+  },
+  {
+    title: "Categories",
+  },
+];
+
 const Header = () => {
-  const [menu, setMenu] = React.useState(false);
-  const [menuMobile, setMenuMobile] = React.useState(null);
+  const [menuMobile, setMenuMobile] = React.useState(false);
 
-  function handleMenu() {
-    console.log("ativo");
-    if (!menuMobile) {
-      setMenu(
-        <img
-          className="relative z-10 grid cursor-pointer"
-          src={menuFechar}
-          onClick={handleMenu}
-          alt="Menu"
-        />,
-      );
-      setMenuMobile("ativo");
-    } else if (menuMobile === "ativo") setMenuMobile(null);
+  function toggleMenu() {
+    setMenuMobile(!menuMobile);
   }
-
-  const handleResize = () => {
-    if (window.innerWidth < 640) {
-      setMenu(
-        <img
-          className="grid cursor-pointer"
-          src={menuAbrir}
-          onClick={handleMenu}
-          alt="Menu"
-        />,
-      );
-    } else {
-      setMenu(false);
-    }
-  };
-
-  React.useEffect(() => {
-    handleResize();
-    window.addEventListener("resize", handleResize);
-  }, []);
-  window.removeEventListener("resize", handleResize);
 
   return (
     <header className="container flex items-center justify-between p-10">
@@ -51,50 +36,26 @@ const Header = () => {
         </a>
       </div>
       <nav>
-        {menu}
+        <button className="relative z-10 md:hidden" onClick={toggleMenu}>
+          <img
+            src={menuMobile ? menuFechar : menuAbrir}
+            alt="Menu"
+            className="cursor-pointer"
+          />
+        </button>
         <ul
-          className={`${menuMobile} flex gap-8 max-md:-right-full max-sm:fixed max-sm:top-0 max-sm:grid max-sm:h-screen max-sm:w-3/4 max-sm:content-start max-sm:gap-8 max-sm:bg-white max-sm:p-5 max-sm:pt-16 max-sm:text-xl md:gap-2.5`}
+          className={`flex gap-8 max-md:fixed max-md:-right-full max-md:top-0 max-md:grid max-md:h-screen max-md:w-3/4 max-md:content-start max-md:bg-white max-md:p-5 max-md:pt-16 max-md:text-xl ${!menuMobile ? "max-md:grid" : "max-md:right-0 "}`}
         >
-          <li>
-            <a
-              href="#"
-              className="text-azulCinzaEscuro hover:text hover:text-primaria p-1.5 duration-300"
-            >
-              Home
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="text-azulCinzaEscuro hover:text hover:text-primaria p-1.5 duration-300"
-            >
-              New
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="text-azulCinzaEscuro hover:text hover:text-primaria p-1.5 duration-300"
-            >
-              Popular
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="text-azulCinzaEscuro hover:text hover:text-primaria p-1.5 duration-300"
-            >
-              Trending
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="text-azulCinzaEscuro hover:text hover:text-primaria p-1.5 duration-300"
-            >
-              Categories
-            </a>
-          </li>
+          {menuLinks.map(({ title }) => (
+            <li key={title}>
+              <a
+                href={`#${title}`}
+                className="p-1.5 text-xl text-azulCinzaEscuro duration-300 hover:text-primaria"
+              >
+                {title}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>
